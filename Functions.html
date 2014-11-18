@@ -1,0 +1,55 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <div id="d1"> Siva</div>
+   
+    <script type="text/javascript">
+
+     // Agumenting methods     
+     Number.prototype.inty = function () {
+     	if ( this > 0 ) {
+     		return Math.floor(this);
+     	} else {
+     		return Math.ceil(this);
+     	}
+     }
+     
+     // Function call . Either through var or inline function name
+     var howIsThis = function  (p1)
+     {
+       document.writeln("How is this:  " + p1);
+       var a = 19.8;
+       document.writeln("...." + a.inty());
+     }
+
+     howIsThis(10);
+     document.writeln("<br></br>");
+     /******************************/
+     // Recursion - Tower of Hanoi
+      /******************************/
+     MoveDisc("S", "A", "D", 3);
+     
+     function MoveDisc (S, A, D, n) {
+       if ( n <= 0) return;
+
+       MoveDisc (S, D, A, n -1);
+       document.writeln("Move " + n   + " from " + S + " to " + D);
+       document.writeln("<br></br>");
+       MoveDisc (A, S, D,  n - 1);
+     }
+
+   /****************************************/
+   // Scope                
+   /****************************************/
+   function sayHello() {
+
+   	for (i =1; i<2; i++)
+   	{
+   		var world = "World";
+   	}
+   	document.writeln (world);
+   }
+   sayHello();
+    </script>
+  </body>
