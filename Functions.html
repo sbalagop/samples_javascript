@@ -2,7 +2,7 @@
   <head>
   </head>
   <body>
-    <div id="d1"> Siva</div>
+    <div id="d1" data-howru="employeeeee"> Siva</div>
    
     <script type="text/javascript">
 
@@ -52,5 +52,13 @@
    	document.writeln (world + "Siva");
    }
    sayHello();
+        var d = document.getElementById("d1");
+        document.writeln("THIS IS === " + d.getAttribute("data-howru") + " ===");
+        document.writeln("THIS IS === " + d.dataset.howru + " ===");
+        for (prop in d) {
+            document.writeln(" " + prop + " = " + d[prop] + "  ");
+            document.writeln("</br>");
+        }
+        
     </script>
   </body>
